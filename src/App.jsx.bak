@@ -1,11 +1,10 @@
-﻿import useLocalStorage from './hooks/useLocalStorage';
 import { Box, Heading } from "@chakra-ui/react";
 import { FormTodo } from "./components/FormTodo";
 import { ListTodos } from "./components/ListTodos";
 import { useState } from "react";
 
 function App() {
-	const [todos, setTodos] = useLocalStorage('todos', []);
+	const [todos, setTodos] = useState([]);
 
 	const addTodo = (todo) => {
 		setTodos((prev) => [...prev, todo]);
@@ -41,5 +40,3 @@ function App() {
 }
 
 export default App;
-
-
